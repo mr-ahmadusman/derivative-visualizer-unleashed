@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Play, RotateCcw, Sparkles, Target, Zap, Rocket } from 'lucide-react';
+import { ArrowRight, Play, RotateCcw, BookOpen, Target, Calculator, TrendingUp } from 'lucide-react';
 import { useState } from 'react';
 
 interface InteractiveGuideProps {
@@ -14,36 +14,32 @@ export const InteractiveGuide = ({ onFunctionSelect, onPointChange }: Interactiv
 
   const steps = [
     {
-      title: "🎯 Select a Function",
-      description: "Choose from amazing preset functions like quadratic, cubic, sine, or exponential. Each function has its own unique behavior and derivative pattern!",
+      title: "Function Selection",
+      description: "Begin by selecting a mathematical function from our curated collection. Each function demonstrates unique derivative characteristics and behavioral patterns in calculus analysis.",
       action: () => onFunctionSelect(0),
-      color: "from-blue-500 via-cyan-500 to-teal-500",
+      color: "from-slate-600 via-blue-600 to-indigo-600",
       icon: Target,
-      emoji: "🎯"
     },
     {
-      title: "🎮 Move the Point",
-      description: "Click anywhere on the graph or use the slider to change where we calculate the derivative. Watch the magic happen in real-time!",
+      title: "Point Manipulation",
+      description: "Interact with the visualization by selecting points on the function curve. Observe real-time calculations of instantaneous rates of change at your chosen coordinates.",
       action: () => onPointChange(2),
-      color: "from-green-500 via-emerald-500 to-lime-500",
-      icon: Play,
-      emoji: "🎮"
+      color: "from-blue-600 via-indigo-600 to-purple-600",
+      icon: Calculator,
     },
     {
-      title: "✨ Observe the Tangent",
-      description: "Watch how the red tangent line changes its slope as you move the point. This is calculus in action - beautiful mathematics visualized!",
+      title: "Tangent Analysis",
+      description: "Examine the tangent line visualization which represents the linear approximation of the function at the selected point, demonstrating the geometric interpretation of derivatives.",
       action: () => onPointChange(-1),
-      color: "from-purple-500 via-pink-500 to-rose-500",
-      icon: Sparkles,
-      emoji: "✨"
+      color: "from-indigo-600 via-purple-600 to-violet-600",
+      icon: TrendingUp,
     },
     {
-      title: "🚀 Compare Functions",
-      description: "Try different functions to see how derivatives behave differently. Discover the patterns and beauty of mathematical relationships!",
+      title: "Comparative Study",
+      description: "Explore different function types to understand how polynomial, trigonometric, and exponential functions exhibit distinct derivative behaviors and mathematical properties.",
       action: () => onFunctionSelect(2),
-      color: "from-orange-500 via-red-500 to-pink-500",
-      icon: Rocket,
-      emoji: "🚀"
+      color: "from-purple-600 via-violet-600 to-pink-600",
+      icon: BookOpen,
     }
   ];
 
@@ -62,39 +58,34 @@ export const InteractiveGuide = ({ onFunctionSelect, onPointChange }: Interactiv
   const IconComponent = steps[currentStep].icon;
 
   return (
-    <Card className="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 border-4 border-purple-300 shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
-      <CardHeader className={`bg-gradient-to-r ${steps[currentStep].color} text-white rounded-t-lg relative overflow-hidden`}>
-        <div className="absolute inset-0 bg-white/10 animate-pulse"></div>
-        <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-16 translate-x-16"></div>
-        <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-12 -translate-x-12"></div>
-        <CardTitle className="flex items-center justify-between relative z-10">
+    <Card className="bg-white/90 backdrop-blur-sm border border-slate-200 shadow-xl overflow-hidden">
+      <CardHeader className={`bg-gradient-to-r ${steps[currentStep].color} text-white`}>
+        <CardTitle className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="bg-white/20 p-2 rounded-full animate-bounce">
+            <div className="bg-white/20 p-2 rounded-lg">
               <IconComponent className="h-6 w-6" />
             </div>
-            <span className="text-2xl font-bold">Interactive Guide</span>
-            <span className="text-2xl">{steps[currentStep].emoji}</span>
+            <span className="text-2xl font-semibold">Professional Tutorial</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-sm bg-white/30 px-3 py-1 rounded-full font-semibold">
+            <span className="text-sm bg-white/20 px-3 py-1 rounded-full font-medium">
               Step {currentStep + 1} of {steps.length}
             </span>
-            <Zap className="h-5 w-5 animate-pulse" />
           </div>
         </CardTitle>
       </CardHeader>
       <CardContent className="p-8">
         <div className="space-y-6">
-          <div className="bg-gradient-to-r from-white via-gray-50 to-white p-6 rounded-xl shadow-lg border-2 border-gray-200 transform hover:shadow-xl transition-all duration-300">
+          <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
             <div className="flex items-center gap-3 mb-4">
-              <div className={`bg-gradient-to-r ${steps[currentStep].color} p-3 rounded-full shadow-lg`}>
+              <div className={`bg-gradient-to-r ${steps[currentStep].color} p-3 rounded-lg shadow-sm`}>
                 <IconComponent className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-800">
+              <h3 className="text-xl font-semibold text-slate-800">
                 {steps[currentStep].title}
               </h3>
             </div>
-            <p className="text-gray-700 leading-relaxed text-lg bg-gradient-to-r from-gray-100 to-gray-50 p-4 rounded-lg border-l-4 border-purple-400">
+            <p className="text-slate-600 leading-relaxed text-base">
               {steps[currentStep].description}
             </p>
           </div>
@@ -103,52 +94,47 @@ export const InteractiveGuide = ({ onFunctionSelect, onPointChange }: Interactiv
             {currentStep < steps.length - 1 ? (
               <Button 
                 onClick={nextStep}
-                className={`bg-gradient-to-r ${steps[currentStep].color} hover:opacity-90 text-white flex items-center gap-3 px-8 py-3 text-lg font-semibold shadow-lg transform hover:scale-105 transition-all duration-300`}
+                className={`bg-gradient-to-r ${steps[currentStep].color} hover:opacity-90 text-white flex items-center gap-3 px-6 py-2 font-medium`}
               >
-                <Play className="h-5 w-5 animate-pulse" />
-                Next Step
-                <ArrowRight className="h-5 w-5" />
+                <Play className="h-4 w-4" />
+                Continue
+                <ArrowRight className="h-4 w-4" />
               </Button>
             ) : (
               <Button 
                 onClick={resetGuide}
-                className="bg-gradient-to-r from-gray-600 via-gray-700 to-gray-800 hover:opacity-90 text-white flex items-center gap-3 px-8 py-3 text-lg font-semibold shadow-lg transform hover:scale-105 transition-all duration-300"
+                className="bg-gradient-to-r from-slate-600 via-slate-700 to-slate-800 hover:opacity-90 text-white flex items-center gap-3 px-6 py-2 font-medium"
               >
-                <RotateCcw className="h-5 w-5 animate-spin" />
-                Start Over
-                <Sparkles className="h-5 w-5" />
+                <RotateCcw className="h-4 w-4" />
+                Restart Tutorial
               </Button>
             )}
           </div>
 
-          {/* Enhanced Progress Bar */}
           <div className="relative">
-            <div className="w-full bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 rounded-full h-4 shadow-inner">
+            <div className="w-full bg-slate-200 rounded-full h-2">
               <div 
-                className={`bg-gradient-to-r ${steps[currentStep].color} h-4 rounded-full transition-all duration-700 ease-out shadow-lg relative overflow-hidden`}
+                className={`bg-gradient-to-r ${steps[currentStep].color} h-2 rounded-full transition-all duration-500`}
                 style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}
-              >
-                <div className="absolute inset-0 bg-white/30 animate-pulse"></div>
-              </div>
+              ></div>
             </div>
-            <div className="flex justify-between mt-2 text-sm font-semibold text-gray-600">
-              <span>Start</span>
-              <span className="text-purple-600">Progress: {Math.round(((currentStep + 1) / steps.length) * 100)}%</span>
-              <span>Complete</span>
+            <div className="flex justify-between mt-2 text-sm text-slate-500">
+              <span>Introduction</span>
+              <span>Progress: {Math.round(((currentStep + 1) / steps.length) * 100)}%</span>
+              <span>Completion</span>
             </div>
           </div>
 
-          {/* Fun Tips */}
-          <div className="bg-gradient-to-r from-yellow-100 via-amber-100 to-orange-100 p-4 rounded-xl border-2 border-yellow-300 shadow-md">
+          <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
             <div className="flex items-center gap-2 mb-2">
-              <span className="text-2xl">💡</span>
-              <h4 className="font-bold text-amber-800">Pro Tip!</h4>
+              <BookOpen className="h-4 w-4 text-blue-600" />
+              <h4 className="font-medium text-blue-800">Mathematical Insight</h4>
             </div>
-            <p className="text-amber-700 text-sm">
-              {currentStep === 0 && "Each function has different derivative behaviors - polynomials vs trigonometric vs exponential!"}
-              {currentStep === 1 && "Try clicking directly on the graph to instantly move the point to that location!"}
-              {currentStep === 2 && "The steeper the tangent line, the larger the derivative value!"}
-              {currentStep === 3 && "Sine and cosine functions have beautiful, predictable derivative patterns!"}
+            <p className="text-blue-700 text-sm">
+              {currentStep === 0 && "Different function families exhibit unique derivative patterns - understanding these relationships is fundamental to calculus mastery."}
+              {currentStep === 1 && "The ability to calculate instantaneous rates of change at any point revolutionized mathematics and physics in the 17th century."}
+              {currentStep === 2 && "Tangent lines provide the best linear approximation to a curve at any given point, forming the basis of differential calculus."}
+              {currentStep === 3 && "Comparative analysis reveals the elegant mathematical relationships between different function types and their derivatives."}
             </p>
           </div>
         </div>

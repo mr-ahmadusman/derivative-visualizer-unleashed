@@ -21,29 +21,29 @@ const presetFunctions: FunctionConfig[] = [
     expression: 'x^2',
     derivative: '2*x',
     domain: [-5, 5],
-    color: '#3b82f6',
-    name: 'Quadratic: f(x) = x²'
+    color: '#1e40af',
+    name: 'Quadratic Function: f(x) = x²'
   },
   {
     expression: 'x^3 - 3*x',
     derivative: '3*x^2 - 3',
     domain: [-3, 3],
-    color: '#8b5cf6',
-    name: 'Cubic: f(x) = x³ - 3x'
+    color: '#7c3aed',
+    name: 'Cubic Function: f(x) = x³ - 3x'
   },
   {
     expression: 'sin(x)',
     derivative: 'cos(x)',
     domain: [-6.28, 6.28],
-    color: '#10b981',
-    name: 'Sine: f(x) = sin(x)'
+    color: '#059669',
+    name: 'Trigonometric Function: f(x) = sin(x)'
   },
   {
     expression: 'e^x',
     derivative: 'e^x',
     domain: [-2, 3],
-    color: '#f59e0b',
-    name: 'Exponential: f(x) = eˣ'
+    color: '#d97706',
+    name: 'Exponential Function: f(x) = eˣ'
   }
 ];
 
@@ -71,12 +71,10 @@ export const DerivativeVisualizer = () => {
     setTangentPoint(0);
   }, []);
 
-  // Calculate current slope for educational panel
   const currentSlope = evaluateFunction(selectedFunction.derivative, tangentPoint);
 
   return (
     <div className="w-full max-w-7xl mx-auto space-y-8">
-      {/* Interactive Guide */}
       <InteractiveGuide 
         onFunctionSelect={handleGuideFunctionSelect}
         onPointChange={handleGuidePointChange}
@@ -98,13 +96,10 @@ export const DerivativeVisualizer = () => {
         </div>
         
         <div className="lg:col-span-3">
-          <Card className="p-8 bg-gradient-to-br from-white via-blue-50 to-purple-50 backdrop-blur-sm border-4 border-blue-300 shadow-2xl overflow-hidden">
-            <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white p-4 rounded-lg mb-6 relative overflow-hidden">
-              <div className="absolute inset-0 bg-white/10 animate-pulse"></div>
-              <h3 className="text-2xl font-bold text-center relative z-10 flex items-center justify-center gap-3">
-                <span className="text-3xl">📊</span>
-                Interactive Function Plotter
-                <span className="text-3xl">📈</span>
+          <Card className="p-8 bg-white/90 backdrop-blur-sm border border-slate-200 shadow-xl">
+            <div className="bg-gradient-to-r from-slate-700 via-blue-700 to-indigo-700 text-white p-6 rounded-lg mb-6">
+              <h3 className="text-2xl font-semibold text-center">
+                Interactive Mathematical Visualization Platform
               </h3>
             </div>
             <FunctionPlotter
@@ -118,85 +113,80 @@ export const DerivativeVisualizer = () => {
         </div>
       </div>
 
-      {/* Enhanced Mathematical Analysis with Spectacular Colors */}
-      <Card className="p-8 bg-gradient-to-br from-slate-50 via-indigo-50 to-purple-50 backdrop-blur-sm border-4 border-indigo-300 shadow-2xl overflow-hidden">
-        <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white p-6 rounded-lg mb-6 relative overflow-hidden">
-          <div className="absolute inset-0 bg-white/10 animate-pulse"></div>
-          <h3 className="text-3xl font-bold bg-clip-text relative z-10 flex items-center justify-center gap-4">
-            <span className="text-4xl">🧮</span>
-            Mathematical Analysis Dashboard
-            <span className="text-4xl">📋</span>
+      <Card className="p-8 bg-white/90 backdrop-blur-sm border border-slate-200 shadow-xl">
+        <div className="bg-gradient-to-r from-indigo-700 via-purple-700 to-violet-700 text-white p-6 rounded-lg mb-6">
+          <h3 className="text-3xl font-semibold text-center">
+            Comprehensive Mathematical Analysis
           </h3>
         </div>
-        <Separator className="mb-6 h-1 bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300" />
+        <Separator className="mb-8 h-px bg-slate-200" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="space-y-6">
-            <div className="p-6 bg-gradient-to-br from-blue-100 via-cyan-100 to-teal-100 rounded-xl border-l-8 border-blue-500 shadow-lg transform hover:scale-105 transition-all duration-300">
-              <h4 className="font-bold text-blue-800 mb-3 flex items-center gap-3 text-xl">
-                <span className="bg-blue-500 p-2 rounded-full">
-                  <span className="text-white text-lg">📊</span>
+            <div className="p-6 bg-slate-50 rounded-xl border border-slate-200">
+              <h4 className="font-semibold text-slate-800 mb-3 flex items-center gap-3 text-lg">
+                <span className="bg-blue-600 p-2 rounded-lg">
+                  <span className="text-white text-sm">f</span>
                 </span>
-                Function Expression
+                Primary Function
               </h4>
-              <div className="bg-white/80 p-4 rounded-lg border-2 border-blue-300">
-                <p className="text-blue-700 font-mono text-2xl font-bold">f(x) = {selectedFunction.expression}</p>
+              <div className="bg-white p-4 rounded-lg border border-slate-200">
+                <p className="text-slate-700 font-mono text-xl font-medium">f(x) = {selectedFunction.expression}</p>
               </div>
             </div>
-            <div className="p-6 bg-gradient-to-br from-purple-100 via-pink-100 to-rose-100 rounded-xl border-l-8 border-purple-500 shadow-lg transform hover:scale-105 transition-all duration-300">
-              <h4 className="font-bold text-purple-800 mb-3 flex items-center gap-3 text-xl">
-                <span className="bg-purple-500 p-2 rounded-full">
-                  <span className="text-white text-lg">📈</span>
+            <div className="p-6 bg-slate-50 rounded-xl border border-slate-200">
+              <h4 className="font-semibold text-slate-800 mb-3 flex items-center gap-3 text-lg">
+                <span className="bg-purple-600 p-2 rounded-lg">
+                  <span className="text-white text-sm">f'</span>
                 </span>
                 Derivative Function
               </h4>
-              <div className="bg-white/80 p-4 rounded-lg border-2 border-purple-300">
-                <p className="text-purple-700 font-mono text-2xl font-bold">f'(x) = {selectedFunction.derivative}</p>
+              <div className="bg-white p-4 rounded-lg border border-slate-200">
+                <p className="text-slate-700 font-mono text-xl font-medium">f'(x) = {selectedFunction.derivative}</p>
               </div>
             </div>
           </div>
           <div className="space-y-6">
-            <div className="p-6 bg-gradient-to-br from-emerald-100 via-teal-100 to-cyan-100 rounded-xl border-l-8 border-emerald-500 shadow-lg transform hover:scale-105 transition-all duration-300">
-              <h4 className="font-bold text-emerald-800 mb-3 flex items-center gap-3 text-xl">
-                <span className="bg-emerald-500 p-2 rounded-full">
-                  <span className="text-white text-lg">🎯</span>
+            <div className="p-6 bg-slate-50 rounded-xl border border-slate-200">
+              <h4 className="font-semibold text-slate-800 mb-3 flex items-center gap-3 text-lg">
+                <span className="bg-emerald-600 p-2 rounded-lg">
+                  <span className="text-white text-sm">x</span>
                 </span>
-                Point of Interest
+                Analysis Point
               </h4>
-              <div className="bg-white/80 p-4 rounded-lg border-2 border-emerald-300">
-                <p className="text-emerald-700 font-mono text-2xl font-bold">x = {tangentPoint.toFixed(2)}</p>
+              <div className="bg-white p-4 rounded-lg border border-slate-200">
+                <p className="text-slate-700 font-mono text-xl font-medium">x = {tangentPoint.toFixed(3)}</p>
               </div>
             </div>
-            <div className="p-6 bg-gradient-to-br from-rose-100 via-orange-100 to-amber-100 rounded-xl border-l-8 border-rose-500 shadow-lg transform hover:scale-105 transition-all duration-300">
-              <h4 className="font-bold text-rose-800 mb-3 flex items-center gap-3 text-xl">
-                <span className="bg-rose-500 p-2 rounded-full animate-pulse">
-                  <span className="text-white text-lg">⚡</span>
+            <div className="p-6 bg-slate-50 rounded-xl border border-slate-200">
+              <h4 className="font-semibold text-slate-800 mb-3 flex items-center gap-3 text-lg">
+                <span className="bg-rose-600 p-2 rounded-lg">
+                  <span className="text-white text-sm">m</span>
                 </span>
-                Instantaneous Slope
+                Instantaneous Rate
               </h4>
-              <div className="bg-white/80 p-4 rounded-lg border-2 border-rose-300">
-                <p className="text-rose-700 font-mono text-2xl font-bold">
-                  m = {currentSlope.toFixed(3)}
+              <div className="bg-white p-4 rounded-lg border border-slate-200">
+                <p className="text-slate-700 font-mono text-xl font-medium">
+                  slope = {currentSlope.toFixed(4)}
                 </p>
               </div>
             </div>
           </div>
         </div>
         
-        {/* Fun Mathematical Fact */}
-        <div className="mt-8 bg-gradient-to-r from-yellow-100 via-amber-100 to-orange-100 p-6 rounded-xl border-4 border-yellow-400 shadow-lg">
+        <div className="mt-8 bg-blue-50 border border-blue-200 p-6 rounded-xl">
           <div className="flex items-center gap-3 mb-3">
-            <span className="text-3xl">🤯</span>
-            <h4 className="font-bold text-yellow-800 text-xl">Mind-Blowing Math Fact!</h4>
-            <span className="text-3xl">✨</span>
+            <div className="bg-blue-600 p-2 rounded-lg">
+              <span className="text-white text-sm">∇</span>
+            </div>
+            <h4 className="font-semibold text-blue-800 text-lg">Mathematical Interpretation</h4>
           </div>
-          <p className="text-yellow-700 text-lg leading-relaxed">
-            The slope you see ({currentSlope.toFixed(3)}) represents the exact rate of change at this precise point! 
-            This is the power of calculus - we can know exactly how fast something is changing at any instant in time! 🚀
+          <p className="text-blue-700 text-base leading-relaxed">
+            The calculated slope value ({currentSlope.toFixed(4)}) represents the instantaneous rate of change of the function at x = {tangentPoint.toFixed(3)}. 
+            This fundamental concept in differential calculus quantifies how rapidly the function value changes with respect to infinitesimal changes in the input variable.
           </p>
         </div>
       </Card>
 
-      {/* Educational Panel */}
       <EducationPanel 
         selectedFunction={selectedFunction.expression}
         tangentPoint={tangentPoint}
