@@ -22,7 +22,7 @@ export const EducationPanel = ({ selectedFunction, tangentPoint, slope }: Educat
       </CardHeader>
       <CardContent className="p-8 space-y-8">
         
-        {/* What is a Derivative - Enhanced */}
+        {/* What is a Derivative - Enhanced with Image */}
         <div className="bg-gradient-to-br from-emerald-100 via-teal-100 to-cyan-100 p-6 rounded-xl border-l-8 border-emerald-500 shadow-lg transform hover:scale-[1.02] transition-all duration-300">
           <div className="flex items-center gap-3 mb-4">
             <div className="bg-emerald-500 p-2 rounded-full">
@@ -31,18 +31,28 @@ export const EducationPanel = ({ selectedFunction, tangentPoint, slope }: Educat
             <h3 className="text-2xl font-bold text-emerald-800">🎯 What is a Derivative?</h3>
             <Lightbulb className="h-6 w-6 text-yellow-500 animate-pulse ml-auto" />
           </div>
-          <div className="space-y-3">
-            <p className="text-emerald-700 leading-relaxed text-lg">
-              A <strong className="text-emerald-900 bg-emerald-200 px-2 py-1 rounded">derivative</strong> measures how fast a function is changing at any point. Think of it as the "slope" or "steepness" of the curve at that exact spot.
-            </p>
-            <div className="bg-white/70 p-4 rounded-lg border-2 border-emerald-300">
-              <p className="text-emerald-800 font-semibold">🚗 Real Life Example:</p>
-              <p className="text-emerald-700">If you're driving and your speedometer shows 60 mph, that's like the derivative of your position - it tells you how fast your position is changing!</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-3">
+              <p className="text-emerald-700 leading-relaxed text-lg">
+                A <strong className="text-emerald-900 bg-emerald-200 px-2 py-1 rounded">derivative</strong> measures how fast a function is changing at any point. Think of it as the "slope" or "steepness" of the curve at that exact spot.
+              </p>
+              <div className="bg-white/70 p-4 rounded-lg border-2 border-emerald-300">
+                <p className="text-emerald-800 font-semibold">🚗 Real Life Example:</p>
+                <p className="text-emerald-700">If you're driving and your speedometer shows 60 mph, that's like the derivative of your position - it tells you how fast your position is changing!</p>
+              </div>
+            </div>
+            <div className="bg-white/80 p-4 rounded-lg border-2 border-emerald-300">
+              <img 
+                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop" 
+                alt="Mathematical programming visualization"
+                className="w-full h-48 object-cover rounded-lg shadow-md mb-3"
+              />
+              <p className="text-emerald-700 text-sm text-center font-medium">Mathematical Analysis in Action</p>
             </div>
           </div>
         </div>
 
-        {/* Tangent Line Explanation - Enhanced */}
+        {/* Tangent Line Explanation - Enhanced with Image */}
         <div className="bg-gradient-to-br from-rose-100 via-pink-100 to-red-100 p-6 rounded-xl border-l-8 border-rose-500 shadow-lg transform hover:scale-[1.02] transition-all duration-300">
           <div className="flex items-center gap-3 mb-4">
             <div className="bg-rose-500 p-2 rounded-full">
@@ -51,13 +61,23 @@ export const EducationPanel = ({ selectedFunction, tangentPoint, slope }: Educat
             <h3 className="text-2xl font-bold text-rose-800">📐 Tangent Line Magic</h3>
             <Calculator className="h-6 w-6 text-blue-500 animate-bounce ml-auto" />
           </div>
-          <div className="space-y-3">
-            <p className="text-rose-700 leading-relaxed text-lg">
-              The <strong className="text-rose-900 bg-rose-200 px-2 py-1 rounded">tangent line</strong> is a straight line that just "kisses" the curve at one point. It has the exact same slope as the curve at that moment.
-            </p>
-            <div className="bg-white/70 p-4 rounded-lg border-2 border-rose-300">
-              <p className="text-rose-800 font-semibold">⚽ Sports Example:</p>
-              <p className="text-rose-700">Imagine a ball rolling down a curved hill - the tangent line shows the exact direction the ball would fly if it suddenly left the hill at that point!</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-3">
+              <p className="text-rose-700 leading-relaxed text-lg">
+                The <strong className="text-rose-900 bg-rose-200 px-2 py-1 rounded">tangent line</strong> is a straight line that just "kisses" the curve at one point. It has the exact same slope as the curve at that moment.
+              </p>
+              <div className="bg-white/70 p-4 rounded-lg border-2 border-rose-300">
+                <p className="text-rose-800 font-semibold">⚽ Sports Example:</p>
+                <p className="text-rose-700">Imagine a ball rolling down a curved hill - the tangent line shows the exact direction the ball would fly if it suddenly left the hill at that point!</p>
+              </div>
+            </div>
+            <div className="bg-white/80 p-4 rounded-lg border-2 border-rose-300">
+              <img 
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop" 
+                alt="Circuit board patterns representing mathematical connections"
+                className="w-full h-48 object-cover rounded-lg shadow-md mb-3"
+              />
+              <p className="text-rose-700 text-sm text-center font-medium">Mathematical Connections & Patterns</p>
             </div>
           </div>
         </div>
@@ -101,7 +121,7 @@ export const EducationPanel = ({ selectedFunction, tangentPoint, slope }: Educat
 
         <Separator className="my-8 h-1 bg-gradient-to-r from-purple-300 via-pink-300 to-rose-300" />
 
-        {/* Step by Step Process - Super Enhanced */}
+        {/* Step by Step Process - Super Enhanced with Image */}
         <div className="bg-gradient-to-br from-violet-100 via-purple-100 to-indigo-100 p-6 rounded-xl border-l-8 border-violet-500 shadow-lg">
           <div className="flex items-center gap-3 mb-6">
             <div className="bg-violet-500 p-2 rounded-full">
@@ -109,39 +129,49 @@ export const EducationPanel = ({ selectedFunction, tangentPoint, slope }: Educat
             </div>
             <h3 className="text-2xl font-bold text-violet-800">🔢 Step-by-Step Process</h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="flex gap-4 bg-white/70 p-4 rounded-lg border-2 border-violet-300 transform hover:scale-105 transition-all duration-300">
-              <div className="bg-gradient-to-r from-violet-500 to-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center text-lg font-bold animate-pulse">1</div>
-              <div>
-                <p className="text-violet-800 font-bold">Choose Function</p>
-                <p className="text-violet-700">Pick f(x) to analyze</p>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex gap-4 bg-white/70 p-4 rounded-lg border-2 border-violet-300 transform hover:scale-105 transition-all duration-300">
+                <div className="bg-gradient-to-r from-violet-500 to-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center text-lg font-bold animate-pulse">1</div>
+                <div>
+                  <p className="text-violet-800 font-bold">Choose Function</p>
+                  <p className="text-violet-700">Pick f(x) to analyze</p>
+                </div>
+              </div>
+              <div className="flex gap-4 bg-white/70 p-4 rounded-lg border-2 border-violet-300 transform hover:scale-105 transition-all duration-300">
+                <div className="bg-gradient-to-r from-violet-500 to-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center text-lg font-bold animate-pulse">2</div>
+                <div>
+                  <p className="text-violet-800 font-bold">Select Point</p>
+                  <p className="text-violet-700">Choose x-coordinate</p>
+                </div>
+              </div>
+              <div className="flex gap-4 bg-white/70 p-4 rounded-lg border-2 border-violet-300 transform hover:scale-105 transition-all duration-300">
+                <div className="bg-gradient-to-r from-violet-500 to-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center text-lg font-bold animate-pulse">3</div>
+                <div>
+                  <p className="text-violet-800 font-bold">Calculate f'(x)</p>
+                  <p className="text-violet-700">Find the slope</p>
+                </div>
+              </div>
+              <div className="flex gap-4 bg-white/70 p-4 rounded-lg border-2 border-violet-300 transform hover:scale-105 transition-all duration-300">
+                <div className="bg-gradient-to-r from-violet-500 to-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center text-lg font-bold animate-pulse">4</div>
+                <div>
+                  <p className="text-violet-800 font-bold">Draw Tangent</p>
+                  <p className="text-violet-700">Create the line</p>
+                </div>
               </div>
             </div>
-            <div className="flex gap-4 bg-white/70 p-4 rounded-lg border-2 border-violet-300 transform hover:scale-105 transition-all duration-300">
-              <div className="bg-gradient-to-r from-violet-500 to-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center text-lg font-bold animate-pulse">2</div>
-              <div>
-                <p className="text-violet-800 font-bold">Select Point</p>
-                <p className="text-violet-700">Choose x-coordinate</p>
-              </div>
-            </div>
-            <div className="flex gap-4 bg-white/70 p-4 rounded-lg border-2 border-violet-300 transform hover:scale-105 transition-all duration-300">
-              <div className="bg-gradient-to-r from-violet-500 to-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center text-lg font-bold animate-pulse">3</div>
-              <div>
-                <p className="text-violet-800 font-bold">Calculate f'(x)</p>
-                <p className="text-violet-700">Find the slope</p>
-              </div>
-            </div>
-            <div className="flex gap-4 bg-white/70 p-4 rounded-lg border-2 border-violet-300 transform hover:scale-105 transition-all duration-300">
-              <div className="bg-gradient-to-r from-violet-500 to-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center text-lg font-bold animate-pulse">4</div>
-              <div>
-                <p className="text-violet-800 font-bold">Draw Tangent</p>
-                <p className="text-violet-700">Create the line</p>
-              </div>
+            <div className="bg-white/80 p-4 rounded-lg border-2 border-violet-300">
+              <img 
+                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop" 
+                alt="Student learning mathematics with laptop"
+                className="w-full h-40 object-cover rounded-lg shadow-md mb-3"
+              />
+              <p className="text-violet-700 text-sm text-center font-medium">Interactive Learning Experience</p>
             </div>
           </div>
         </div>
 
-        {/* Real World Applications - Super Enhanced */}
+        {/* Real World Applications - Super Enhanced with Image */}
         <div className="bg-gradient-to-br from-cyan-100 via-sky-100 to-blue-100 p-6 rounded-xl border-l-8 border-cyan-500 shadow-lg">
           <div className="flex items-center gap-3 mb-6">
             <div className="bg-cyan-500 p-2 rounded-full">
@@ -149,43 +179,53 @@ export const EducationPanel = ({ selectedFunction, tangentPoint, slope }: Educat
             </div>
             <h3 className="text-2xl font-bold text-cyan-800">🌍 Real World Applications</h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-white/80 p-4 rounded-lg border-2 border-cyan-300 shadow-md transform hover:scale-105 transition-all duration-300">
-              <h4 className="text-cyan-800 font-bold text-lg mb-2">🚀 Physics</h4>
-              <ul className="space-y-1 text-cyan-700">
-                <li>• Velocity = derivative of position</li>
-                <li>• Acceleration = derivative of velocity</li>
-                <li>• Force calculations</li>
-              </ul>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-white/80 p-4 rounded-lg border-2 border-cyan-300 shadow-md transform hover:scale-105 transition-all duration-300">
+                <h4 className="text-cyan-800 font-bold text-lg mb-2">🚀 Physics</h4>
+                <ul className="space-y-1 text-cyan-700">
+                  <li>• Velocity = derivative of position</li>
+                  <li>• Acceleration = derivative of velocity</li>
+                  <li>• Force calculations</li>
+                </ul>
+              </div>
+              <div className="bg-white/80 p-4 rounded-lg border-2 border-cyan-300 shadow-md transform hover:scale-105 transition-all duration-300">
+                <h4 className="text-cyan-800 font-bold text-lg mb-2">💰 Economics</h4>
+                <ul className="space-y-1 text-cyan-700">
+                  <li>• Marginal cost analysis</li>
+                  <li>• Profit optimization</li>
+                  <li>• Market trends</li>
+                </ul>
+              </div>
+              <div className="bg-white/80 p-4 rounded-lg border-2 border-cyan-300 shadow-md transform hover:scale-105 transition-all duration-300">
+                <h4 className="text-cyan-800 font-bold text-lg mb-2">⚙️ Engineering</h4>
+                <ul className="space-y-1 text-cyan-700">
+                  <li>• Heat transfer rates</li>
+                  <li>• Electrical current flow</li>
+                  <li>• Structural analysis</li>
+                </ul>
+              </div>
+              <div className="bg-white/80 p-4 rounded-lg border-2 border-cyan-300 shadow-md transform hover:scale-105 transition-all duration-300">
+                <h4 className="text-cyan-800 font-bold text-lg mb-2">🧬 Biology</h4>
+                <ul className="space-y-1 text-cyan-700">
+                  <li>• Population growth rates</li>
+                  <li>• Enzyme reaction rates</li>
+                  <li>• Disease spread modeling</li>
+                </ul>
+              </div>
             </div>
-            <div className="bg-white/80 p-4 rounded-lg border-2 border-cyan-300 shadow-md transform hover:scale-105 transition-all duration-300">
-              <h4 className="text-cyan-800 font-bold text-lg mb-2">💰 Economics</h4>
-              <ul className="space-y-1 text-cyan-700">
-                <li>• Marginal cost analysis</li>
-                <li>• Profit optimization</li>
-                <li>• Market trends</li>
-              </ul>
-            </div>
-            <div className="bg-white/80 p-4 rounded-lg border-2 border-cyan-300 shadow-md transform hover:scale-105 transition-all duration-300">
-              <h4 className="text-cyan-800 font-bold text-lg mb-2">⚙️ Engineering</h4>
-              <ul className="space-y-1 text-cyan-700">
-                <li>• Heat transfer rates</li>
-                <li>• Electrical current flow</li>
-                <li>• Structural analysis</li>
-              </ul>
-            </div>
-            <div className="bg-white/80 p-4 rounded-lg border-2 border-cyan-300 shadow-md transform hover:scale-105 transition-all duration-300">
-              <h4 className="text-cyan-800 font-bold text-lg mb-2">🧬 Biology</h4>
-              <ul className="space-y-1 text-cyan-700">
-                <li>• Population growth rates</li>
-                <li>• Enzyme reaction rates</li>
-                <li>• Disease spread modeling</li>
-              </ul>
+            <div className="bg-white/80 p-4 rounded-lg border-2 border-cyan-300">
+              <img 
+                src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop" 
+                alt="AI and technology representing mathematical applications"
+                className="w-full h-40 object-cover rounded-lg shadow-md mb-3"
+              />
+              <p className="text-cyan-700 text-sm text-center font-medium">Technology & Mathematical Applications</p>
             </div>
           </div>
         </div>
 
-        {/* Mathematical Insights */}
+        {/* Mathematical Insights with Technology Image */}
         <div className="bg-gradient-to-br from-lime-100 via-green-100 to-emerald-100 p-6 rounded-xl border-l-8 border-lime-500 shadow-lg">
           <div className="flex items-center gap-3 mb-4">
             <div className="bg-lime-500 p-2 rounded-full animate-spin">
@@ -193,10 +233,20 @@ export const EducationPanel = ({ selectedFunction, tangentPoint, slope }: Educat
             </div>
             <h3 className="text-2xl font-bold text-lime-800">🧮 Mathematical Insights</h3>
           </div>
-          <div className="bg-white/80 p-4 rounded-lg border-2 border-lime-300">
-            <p className="text-lime-700 text-lg leading-relaxed">
-              <strong>Fun Fact:</strong> The derivative tells us the instantaneous rate of change! It's like having a super-powered microscope that can zoom into any point on a curve and tell us exactly how steep it is at that precise moment. This concept revolutionized mathematics and science! 🤯
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white/80 p-4 rounded-lg border-2 border-lime-300">
+              <p className="text-lime-700 text-lg leading-relaxed">
+                <strong>Fun Fact:</strong> The derivative tells us the instantaneous rate of change! It's like having a super-powered microscope that can zoom into any point on a curve and tell us exactly how steep it is at that precise moment. This concept revolutionized mathematics and science! 🤯
+              </p>
+            </div>
+            <div className="bg-white/80 p-4 rounded-lg border-2 border-lime-300">
+              <img 
+                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop" 
+                alt="Modern laptop representing computational mathematics"
+                className="w-full h-40 object-cover rounded-lg shadow-md mb-3"
+              />
+              <p className="text-lime-700 text-sm text-center font-medium">Modern Computational Mathematics</p>
+            </div>
           </div>
         </div>
       </CardContent>
